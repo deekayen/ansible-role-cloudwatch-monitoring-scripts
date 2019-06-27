@@ -17,6 +17,8 @@ Please see: https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/QuickStartE
 
 ## Prerequisites
 
+**AMI**
+
 This role assumes you run an AMI provide by CentOS on AWS market place (free of charge).
 
 To find the latest AMI from Centos for your AWS region you can run the command below.
@@ -28,6 +30,14 @@ aws --region eu-west-1 ec2 describe-images \
     --query 'sort_by(Images, &CreationDate)[-1].[ImageId]' \
     --output 'text'
 ```
+
+**Monitoring scripts for linux**
+
+We also install the monitoring script for linux to monitor memory, cpu, swap, etc.
+You need to have a role attach to the instance (or credentials) in order to be able to write to cloudwatch. 
+
+See: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mon-scripts.html
+
 
 ## Usage
 
