@@ -35,7 +35,7 @@
 - name: Creates a cron file under /etc/cron.d
   cron:
     name: "run mon-put-instance-data.pl every 5mn"
-    minute: */5
+    minute: "*/5"
     user: root
-    job: "{{ aws_mon_script_install_dir }}/aws-scripts-mon/mon-put-instance-data.pl"
+    job: "{{ aws_mon_script_install_dir }}/aws-scripts-mon/mon-put-instance-data.pl --mem-used --swap-util --mem-util --mem-used --mem-avail --disk-space-util --disk-path=/ --from-cron"
     cron_file: ansible_aws_mon-put-instance-data
