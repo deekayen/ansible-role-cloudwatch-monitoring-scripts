@@ -27,4 +27,13 @@
     name: awslogs
     enabled: yes
     state: "{{ awslogs_service_state }}"
-  when: awslogs_package_installation.changed
+
+
+# New agent - Work to do.
+# - name: Install cloudwatch agent
+#  yum:
+#    name:
+#      - https://s3.amazonaws.com/amazoncloudwatch-agent/amazon_linux/amd64/latest/amazon-cloudwatch-agent.rpm
+#    state: present
+#  register: amazon_cloudwatch_installation
+
