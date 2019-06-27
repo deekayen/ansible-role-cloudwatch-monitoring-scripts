@@ -10,3 +10,11 @@
 - name: Include for Amazon Linux
   include: install_amazon_linux.yml
   when: ansible_distribution == 'Amazon'
+
+
+# Install monitoring script
+# Monitoring Memory and Disk Metrics for Amazon EC2 Linux Instances
+# See: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mon-scripts.html
+
+- name: Monitoring script installation
+  include: install_mon_script.yml

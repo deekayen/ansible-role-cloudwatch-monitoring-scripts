@@ -1,7 +1,6 @@
 ---
 
-# Monitoring Memory and Disk Metrics for Amazon EC2 Linux Instances
-# See: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mon-scripts.html
+# Pre-requisities install monitoring script
 
 - name: Enable AWS RHEL extras repository
   shell: yum-config-manager --enable rhui-REGION-rhel-server-extras
@@ -27,6 +26,8 @@
     packages:
     - zip
     - unzip
+
+# Pre-requisities install cloudwatch agent.
 
 # This will be use to place install file.
 - name: Create install directory

@@ -1,8 +1,6 @@
-# Install monitoring script
+---
 
-
-# Monitoring Memory and Disk Metrics for Amazon EC2 Linux Instances
-# See: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mon-scripts.html
+# Pre-requisities install monitoring script
 
 - name: Ensure a list of packages installed
   yum:
@@ -14,28 +12,3 @@
     - perl-Sys-Syslog
     - perl-LWP-Protocol-https
     - perl-Digest-SHA.x86_64
-
-- name: Download the cloudwatch monitoring package
-  get_url:
-    dest: "{{ download_temp_dir }}"
-    group: root
-    owner: root
-    mode: 0600
-    url: "{{ aws_mon_script_url }}"
-    force: "{{ awslogs_force_download | default('false') }}"
-  register: download_mon_script
-
-- name: Unarchive the cloudwatch monitoring package
-  unarchive:
-    src: "{{ aws_mon_script_url }}"
-    dest: "{{ aws_mon_script_install_dir }}"
-    remote_src: yes
-  register: get_mon_script
-
-- name: Creates a cron file under /etc/cron.d
-  cron:
-    name: "run mon-put-instance-data.pl every 5mn"
-    minute: "*/5"
-    user: root
-    job: "{{ aws_mon_script_install_dir }}/aws-scripts-mon/mon-put-instance-data.pl --mem-used --swap-util --mem-util --mem-used --mem-avail --disk-space-util --disk-path=/ --from-cron"
-    cron_file: ansible_aws_mon-put-instance-data
