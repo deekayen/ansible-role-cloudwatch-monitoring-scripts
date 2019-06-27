@@ -1,6 +1,6 @@
 ---
 
-# Pre-requisities install monitoring script
+# Pre-requisities install monitoring script & cloudwatch logs
 
 - name: Ensure a list of packages installed
   yum:
@@ -12,3 +12,19 @@
     - perl-Sys-Syslog
     - perl-LWP-Protocol-https
     - perl-Digest-SHA.x86_64
+
+# Install AWS logwatch agent
+
+- name: Ensure a list of packages installed
+  yum:
+    name:
+      - awslogs
+    state: latest
+  register: awslogs_package_installation
+
+- name: Start service awslogs
+  service:
+    name: awslogs
+    enabled: yes
+    state: "{{ awslogs_service_state }}"
+  when: package_installation.changed
