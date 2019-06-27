@@ -27,4 +27,4 @@
     name: awslogs
     enabled: yes
     state: "{{ awslogs_service_state }}"
-  when: package_installation.changed
+  when: awslogs_package_installation.changed
