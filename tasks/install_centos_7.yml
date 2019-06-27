@@ -2,13 +2,9 @@
 
 # Pre-requisities install monitoring script
 
-- name: Enable AWS RHEL extras repository
-  shell: yum-config-manager --enable rhui-REGION-rhel-server-extras
-
-- name: Ensure a list of packages installed from rhui-REGION-rhel-server-optional
+- name: Ensure a list of packages
   yum:
     name: "{{ packages }}"
-    enablerepo: "rhui-REGION-rhel-server-optional"
     state: present
   vars:
     packages:
@@ -17,13 +13,6 @@
     - perl-Sys-Syslog
     - perl-LWP-Protocol-https
     - perl-Digest-SHA
-
-- name: Ensure a list of packages installed
-  yum:
-    name: "{{ packages }}"
-    state: present
-  vars:
-    packages:
     - zip
     - unzip
 
