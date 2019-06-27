@@ -6,3 +6,7 @@
 - name: Include for centos 6
   include: install_centos_6.yml
   when: ansible_distribution == 'CentOS' and ansible_distribution_major_version == '6'
+
+- name: Include for Amazon Linux
+  include: install_amazon_linux.yml
+  when: ansible_distribution == 'Amazon'

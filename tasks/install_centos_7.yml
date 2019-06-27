@@ -1,5 +1,33 @@
 ---
 
+# Monitoring Memory and Disk Metrics for Amazon EC2 Linux Instances
+# See: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mon-scripts.html
+
+- name: Enable AWS RHEL extras repository
+  shell: yum-config-manager --enable rhui-REGION-rhel-server-extras
+
+- name: Ensure a list of packages installed from rhui-REGION-rhel-server-optional
+  yum:
+    name: "{{ packages }}"
+    enablerepo: "rhui-REGION-rhel-server-optional"
+    state: present
+  vars:
+    packages:
+    - perl-Switch
+    - perl-DateTime
+    - perl-Sys-Syslog
+    - perl-LWP-Protocol-https
+    - perl-Digest-SHA
+
+- name: Ensure a list of packages installed
+  yum:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+    - zip
+    - unzip
+
 # This will be use to place install file.
 - name: Create install directory
   file:
