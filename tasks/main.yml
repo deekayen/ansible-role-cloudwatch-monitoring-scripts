@@ -25,7 +25,7 @@
   unarchive:
     src: "{{ aws_mon_script_url }}"
     dest: "{{ aws_mon_script_install_dir }}"
-    remote_src: yes
+    remote_src: true
   register: get_mon_script
 
 - name: "Debug: monitoring script install."
