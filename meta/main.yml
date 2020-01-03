@@ -1,10 +1,10 @@
 ---
 
 galaxy_info:
+  role_name: cloudwatch_monitoring_scripts
   author: Alban MUSSI
   description: "Install AWS Cloudwatch Agent Scripts."
   license: MIT
-  company: Uptime Managers
   min_ansible_version: 2.2
 
   platforms:
