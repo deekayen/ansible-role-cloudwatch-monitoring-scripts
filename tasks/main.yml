@@ -28,6 +28,11 @@
     remote_src: yes
   register: get_mon_script
 
+- name: "Debug: monitoring script install."
+  debug:
+    var: get_mon_script
+    verbosity: 2
+
 - name: Creates a cron file under /etc/cron.d
   cron:
     name: "run mon-put-instance-data.pl every 5mn"
