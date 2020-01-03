@@ -9,6 +9,7 @@ env:
   global:
     - ROLE_NAME: molecule_sandbox
   jobs:
+    - MOLECULE_DISTRO: centos8
     - MOLECULE_DISTRO: centos7
 
 install:
