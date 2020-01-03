@@ -4,5 +4,17 @@
 # Monitoring Memory and Disk Metrics for Amazon EC2 Linux Instances
 # See: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mon-scripts.html
 
-- name: Monitoring script installation
-  include: install_mon_script.yml
+- name: Ensure a list of packages
+  yum:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+    - perl-Switch
+    - perl-DateTime
+    - perl-Sys-Syslog
+    - perl-LWP-Protocol-https
+    - perl-Digest-SHA
+    - zip
+    - unzip
+
