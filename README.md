@@ -50,11 +50,3 @@ License
 -------
 
 MIT
-
-
-
-
-**Monitoring scripts for linux**
-
-
-
