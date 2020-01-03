@@ -1,16 +1,4 @@
 ---
-download_temp_dir: "/var/tmp"
 
-# AWS CloudWatch Agent
-awslogs_install_dir: "/var/awslogs/install"
-awslogs_install_url: "https://s3.amazonaws.com/aws-cloudwatch/downloads/latest/awslogs-agent-setup.py"
-awslogs_enforce_latest: false
-awslogs_service_state: started
-aws_region: "eu-west-1"
-
-
-# Monitoring Memory and Disk Metrics for Amazon EC2 Linux Instances
-#
-# https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mon-scripts.html
 aws_mon_script_install_dir: "/opt"
 aws_mon_script_url: "https://aws-cloudwatch.s3.amazonaws.com/downloads/CloudWatchMonitoringScripts-1.2.2.zip"
