@@ -1,6 +1,6 @@
 galaxy_info:
   author: Alban MUSSI
-  description: "An Ansible role to install AWS Cloudwatch Logs agent on CentOS 7"
+  description: "Install AWS Cloudwatch Agent Scripts."
   license: MIT
   company: Uptime Managers
   min_ansible_version: 2.2
