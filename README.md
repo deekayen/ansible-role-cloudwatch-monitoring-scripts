@@ -1,42 +1,55 @@
-# Ansible Role for AWS CloudWatch Logs agent
+AWS CloudWatch monitoring scripts
+=========
 
 [![Build Status](https://travis-ci.org/deekayen/ansible-role-cloudwatch-agent-scripts.svg?branch=master)](https://travis-ci.org/deekayen/ansible-role-cloudwatch-agent-scripts)
 
-## Introduction
-
-An Ansible role to install AWS Cloudwatch Logs agent on CentOS.
-
-In case you can't afford to run Amazon Linux, this role will install the cloudwatch agent on centos.
-
-Current status :
-
-  -  CentOS 7 --> Tested.
-  -  CentOS 6 --> Not tested (Contributor welcome !)
+An Ansible role to install AWS Cloudwatch Logs agent and monitoring scripts on Enterprise Linux.
 
 Please see: https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/QuickStartEC2Instance.html
-
-## Prerequisites
-
-**AMI**
-
-This role assumes you run an AMI provide by CentOS on AWS market place (free of charge).
-
-To find the latest AMI from Centos for your AWS region you can run the command below.
-
-```
-aws --region eu-west-1 ec2 describe-images \
-    --owners aws-marketplace \
-    --filters Name=product-code,Values=aw0evgkw8e5c1q413zgy5pjce \
-    --query 'sort_by(Images, &CreationDate)[-1].[ImageId]' \
-    --output 'text'
-```
-
-**Monitoring scripts for linux**
 
 We also install the monitoring script for linux to monitor memory, cpu, swap, etc.
 You need to have a role attach to the instance (or credentials) in order to be able to write to cloudwatch.
 
 See: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mon-scripts.html
+
+
+Requirements
+------------
+
+
+
+Role Variables
+--------------
+
+A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+
+Dependencies
+------------
+
+```
+- src: git+https://github.com/riponbanik/ansible-role-aws-cloudwatch-agent.git
+  name: riponbanik.aws-cloudwatch-agent
+  version: 80203e57822b3c1424460a9d222f47f668e114e7
+```
+
+Example Playbook
+----------------
+
+Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+
+    - hosts: all
+      roles:
+        - deekayen.cloudwatch_monitoring_scripts
+
+License
+-------
+
+MIT
+
+
+
+
+**Monitoring scripts for linux**
 
 
 ## Usage
@@ -71,13 +84,3 @@ ansible-playbook  -i "localhost," -c local playbook.yml
 You need to attach a role to your instance to send message to AWS Cloudwatch.
 
 see: https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/QuickStartEC2Instance.html
-
-
-## What's next
-
-- Test redhat 7 distribution with this role.
-
-
-## License
-
-MIT
