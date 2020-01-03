@@ -34,14 +34,14 @@ aws --region eu-west-1 ec2 describe-images \
 **Monitoring scripts for linux**
 
 We also install the monitoring script for linux to monitor memory, cpu, swap, etc.
-You need to have a role attach to the instance (or credentials) in order to be able to write to cloudwatch. 
+You need to have a role attach to the instance (or credentials) in order to be able to write to cloudwatch.
 
 See: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mon-scripts.html
 
 
 ## Usage
 
-Include the folder in your roles directory. 
+Include the folder in your roles directory.
 
 If you want to run this playbook locally you can do the following.
 
@@ -50,7 +50,7 @@ Clone the repository
 ```shell
 git clone https://github.com/bitintheskud/ansible-role-cloudwatch-logs-agent.git
 ```
-Create a local ansible playbook with the role included. 
+Create a local ansible playbook with the role included.
 
 ```Shell
 cat > playbook.yml
@@ -68,14 +68,14 @@ Run ansible-playbook
 ansible-playbook  -i "localhost," -c local playbook.yml
 ```
 
-You need to attach a role to your instance to send message to AWS Cloudwatch. 
+You need to attach a role to your instance to send message to AWS Cloudwatch.
 
 see: https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/QuickStartEC2Instance.html
 
 
-## What's next 
+## What's next
 
-- Test redhat 7 distribution with this role. 
+- Test redhat 7 distribution with this role.
 
 
 ## License
