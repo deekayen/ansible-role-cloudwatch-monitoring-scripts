@@ -16,12 +16,17 @@ See: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mon-scripts.html
 Requirements
 ------------
 
+You need to attach a role to your instance to send message to AWS Cloudwatch.
 
+see: https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/QuickStartEC2Instance.html
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+```
+aws_mon_script_install_dir: "/opt"
+aws_mon_script_url: "https://aws-cloudwatch.s3.amazonaws.com/downloads/CloudWatchMonitoringScripts-1.2.2.zip"
+```
 
 Dependencies
 ------------
@@ -52,35 +57,4 @@ MIT
 **Monitoring scripts for linux**
 
 
-## Usage
 
-Include the folder in your roles directory.
-
-If you want to run this playbook locally you can do the following.
-
-Clone the repository
-
-```shell
-git clone https://github.com/bitintheskud/ansible-role-cloudwatch-logs-agent.git
-```
-Create a local ansible playbook with the role included.
-
-```Shell
-cat > playbook.yml
----
-- name: Test cloudwatch role
-  hosts: 127.0.0.1
-  become: yes
-  roles:
-    - { role: '<YOUR PATH>/ansible-role-cloudwatch-logs-agent' }
-```
-
-Run ansible-playbook
-
-```shell
-ansible-playbook  -i "localhost," -c local playbook.yml
-```
-
-You need to attach a role to your instance to send message to AWS Cloudwatch.
-
-see: https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/QuickStartEC2Instance.html
