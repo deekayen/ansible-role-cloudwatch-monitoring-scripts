@@ -31,6 +31,8 @@ aws_mon_script_url: "https://aws-cloudwatch.s3.amazonaws.com/downloads/CloudWatc
 Dependencies
 ------------
 
+This expects AWS CloudWatch Agent to be installed already, but I didn't add that as a mandatory role dependency. Here's a potential role you could run before this role in your playbook:
+
 ```
 - src: git+https://github.com/riponbanik/ansible-role-aws-cloudwatch-agent.git
   name: riponbanik.aws-cloudwatch-agent
