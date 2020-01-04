@@ -16,10 +16,9 @@ galaxy_info:
     - amazon
     - aws
     - centos
-    - centOS
+    - centos
+    - redhat
     - cloudwatch
 
 dependencies:
-  - src: git+https://github.com/riponbanik/ansible-role-aws-cloudwatch-agent.git
-    name: riponbanik.aws-cloudwatch-agent
-    version: 80203e57822b3c1424460a9d222f47f668e114e7
+  - riponbanik.aws-cloudwatch-agent
