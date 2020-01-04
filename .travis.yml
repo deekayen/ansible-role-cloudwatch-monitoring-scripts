@@ -19,6 +19,7 @@ before_script:
   - cd ../
   - mv ansible-role-$ROLE_NAME deekayen.$ROLE_NAME
   - cd deekayen.$ROLE_NAME
+  - ansible-galaxy install --force -r molecule/default/requirements.yml
 
 script:
   - molecule test
