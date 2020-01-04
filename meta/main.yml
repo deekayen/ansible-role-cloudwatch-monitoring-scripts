@@ -19,5 +19,4 @@ galaxy_info:
     - redhat
     - cloudwatch
 
-dependencies:
-  - riponbanik.aws-cloudwatch-agent
+dependencies: []
