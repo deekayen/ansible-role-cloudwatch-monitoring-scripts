@@ -10,6 +10,7 @@
     state: present
   vars:
     packages:
+      - crontabs
       - perl-Switch
       - perl-DateTime
       - perl-Sys-Syslog
