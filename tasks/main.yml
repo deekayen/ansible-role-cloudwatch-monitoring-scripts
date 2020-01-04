@@ -10,7 +10,7 @@
     state: present
   when:
     - ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
-    - (ansible_distribution_version | regex_replace('^(\\d).*', '\\1')) == 7
+    - (ansible_distribution_version | regex_search('^(\\d).*')) == '7'
 
 - name: Install script dependencies for EL 8.
   dnf:
@@ -19,7 +19,7 @@
     state: present
   when:
     - ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
-    - (ansible_distribution_version | regex_replace('^(\\d).*', '\\1')) == 8
+    - (ansible_distribution_version | regex_search('^(\\d).*')) == '8'
 
 # Monitoring Memory and Disk Metrics for Amazon EC2 Linux Instances
 # See: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mon-scripts.html
