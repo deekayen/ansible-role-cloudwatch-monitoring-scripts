@@ -1,5 +1,8 @@
 ---
 
+- debug:
+    var: ansible_distribution_major_version
+
 # Install monitoring script
 # Monitoring Memory and Disk Metrics for Amazon EC2 Linux Instances
 # See: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mon-scripts.html
@@ -10,7 +13,7 @@
     state: present
   when:
     - ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
-    - ansible_distribution_major_version == 7
+    - ansible_distribution_major_version == '7'
 
 - name: Install script dependencies for EL 8.
   dnf:
@@ -19,7 +22,7 @@
     state: present
   when:
     - ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
-    - ansible_distribution_major_version == 8
+    - ansible_distribution_major_version == '8'
 
 # Monitoring Memory and Disk Metrics for Amazon EC2 Linux Instances
 # See: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mon-scripts.html
