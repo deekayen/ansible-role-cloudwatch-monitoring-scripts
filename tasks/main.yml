@@ -4,10 +4,11 @@
 # Monitoring Memory and Disk Metrics for Amazon EC2 Linux Instances
 # See: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mon-scripts.html
 
-- name: Ensure a list of packages
+- name: Install script dependencies.
   yum:
     name: "{{ packages }}"
     state: present
+    update_cache: true
   vars:
     packages:
       - crontabs
@@ -22,7 +23,7 @@
 # Monitoring Memory and Disk Metrics for Amazon EC2 Linux Instances
 # See: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mon-scripts.html
 
-- name: Unarchive the cloudwatch monitoring package
+- name: Unarchive the CloudWatch monitoring package.
   unarchive:
     src: "{{ aws_mon_script_url }}"
     dest: "{{ aws_mon_script_install_dir }}"
@@ -34,7 +35,7 @@
     var: get_mon_script
     verbosity: 2
 
-- name: Creates a cron file under /etc/cron.d
+- name: Set a cron every 5 minutes to run perl.
   cron:
     name: "run mon-put-instance-data.pl every 5mn"
     minute: "*/5"
