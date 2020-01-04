@@ -1,7 +1,7 @@
 AWS CloudWatch monitoring scripts
 =========
 
-[![Build Status](https://travis-ci.org/deekayen/ansible-role-cloudwatch-monitoring-scripts.svg?branch=master)](https://travis-ci.org/deekayen/ansible-role-cloudwatch-monitoring-scripts)
+[![Build Status](https://travis-ci.org/deekayen/ansible-role-cloudwatch_monitoring_scripts.svg?branch=master)](https://travis-ci.org/deekayen/ansible-role-cloudwatch_monitoring_scripts)
 
 An Ansible role to install AWS Cloudwatch Logs agent and monitoring scripts on Enterprise Linux.
 
