@@ -7,7 +7,7 @@ services: docker
 
 env:
   global:
-    - ROLE_NAME: cloudwatch-monitoring-scripts
+    - ROLE_NAME: cloudwatch_monitoring_scripts
   jobs:
     - MOLECULE_DISTRO: centos8
     - MOLECULE_DISTRO: centos7
