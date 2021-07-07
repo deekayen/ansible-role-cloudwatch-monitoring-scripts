@@ -29,6 +29,9 @@ jobs:
       - name: Install test dependencies.
         run: pip install --upgrade --upgrade-strategy eager -r requirements.txt
 
+      - name: Install test dependencies.
+        run: ansible-galaxy install blackstar257.perl
+
       - name: Link repo folder to a proper galaxy alias.
         run: cd ../ && ln -s ansible-role-cloudwatch_monitoring_scripts deekayen.cloudwatch_monitoring_scripts && cd ansible-role-cloudwatch_monitoring_scripts
 
