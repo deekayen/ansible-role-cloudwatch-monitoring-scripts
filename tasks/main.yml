@@ -20,15 +20,6 @@
     - ansible_distribution == 'CentOS' or ansible_distribution == 'RedHat'
     - ansible_distribution_major_version == '7'
 
-- name: Install script dependencies for EL 8.
-  dnf:
-    name: "{{ package_dependencies }}"
-    enablerepo: PowerTools
-    state: present
-  when:
-    - ansible_distribution == 'CentOS' or ansible_distribution == 'RedHat'
-    - ansible_distribution_major_version == '8'
-
 # Monitoring Memory and Disk Metrics for Amazon EC2 Linux Instances
 # See: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mon-scripts.html
 
