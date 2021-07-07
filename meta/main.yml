@@ -24,4 +24,9 @@ galaxy_info:
     - redhat
     - cloudwatch
 
-dependencies: []
+dependencies:
+  - role: blackstar257.perl
+    vars:
+      perl_cpanm_modules:
+        - Switch
+        - DateTime
