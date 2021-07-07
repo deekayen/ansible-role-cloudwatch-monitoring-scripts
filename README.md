@@ -31,6 +31,16 @@ aws_mon_script_url: "https://aws-cloudwatch.s3.amazonaws.com/downloads/CloudWatc
 Dependencies
 ------------
 
+This implementation is written in perl, so some CPAN libraries are expected.
+
+```
+- role: blackstar257.perl
+  vars:
+    perl_cpanm_modules:
+      - Switch
+      - DateTime
+```
+
 This expects AWS CloudWatch Agent to be installed already, but I didn't add that as a mandatory role dependency. Here's a potential role you could run before this role in your playbook:
 
 ```
