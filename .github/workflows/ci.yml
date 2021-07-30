@@ -1,10 +1,15 @@
 ---
+
 name: CI
 'on':
   pull_request:
   push:
     branches:
       - main
+
+defaults:
+  run:
+    working-directory: 'deekayen.cloudwatch_monitoring_scripts'
 
 jobs:
 
@@ -20,6 +25,8 @@ jobs:
     steps:
       - name: Check out the codebase.
         uses: actions/checkout@v2
+        with:
+          path: 'deekayen.cloudwatch_monitoring_scripts'
 
       - name: Set up Python 3.
         uses: actions/setup-python@v2
@@ -31,9 +38,6 @@ jobs:
 
       - name: Install test dependencies.
         run: ansible-galaxy install blackstar257.perl
-
-      - name: Link repo folder to a proper galaxy alias.
-        run: cd ../ && ln -s ansible-role-cloudwatch_monitoring_scripts deekayen.cloudwatch_monitoring_scripts && cd ansible-role-cloudwatch_monitoring_scripts
 
       - name: Run Molecule tests.
         run: molecule test

@@ -1,10 +1,12 @@
 ---
 
-- debug:
+- name: "Debug: OS version."
+  debug:
     var: ansible_distribution_major_version
     verbosity: 1
 
-- debug:
+- name: "Debug: OS name."
+  debug:
     var: ansible_distribution
     verbosity: 1
 

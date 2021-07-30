@@ -1,7 +1,7 @@
-![CI](https://github.com/deekayen/ansible-role-cloudwatch_monitoring_scripts/workflows/CI/badge.svg?branch=main) [![Build Status](https://travis-ci.org/deekayen/ansible-role-cloudwatch_monitoring_scripts.svg?branch=master)](https://travis-ci.org/deekayen/ansible-role-cloudwatch_monitoring_scripts) [![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive) ![MIT license](https://img.shields.io/badge/license-MIT-blue)
-
 AWS CloudWatch monitoring scripts
 =========
+
+![CI](https://github.com/deekayen/ansible-role-cloudwatch_monitoring_scripts/workflows/CI/badge.svg?branch=main) [![Build Status](https://travis-ci.org/deekayen/ansible-role-cloudwatch_monitoring_scripts.svg?branch=master)](https://travis-ci.org/deekayen/ansible-role-cloudwatch_monitoring_scripts) [![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive) ![MIT license](https://img.shields.io/badge/license-MIT-blue)
 
 An Ansible role to install AWS Cloudwatch Logs agent and monitoring scripts on Enterprise Linux.
 
