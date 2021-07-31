@@ -31,6 +31,6 @@ dependencies:
       perl_cpanm_modules:
         - Switch
         - DateTime
-        - Sys-Syslog
-        - LWP-Protocol-https
-        - Digest-SHA
+        - Sys::Syslog
+        - LWP::Protocol::https
+        - Digest::SHA
