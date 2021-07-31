@@ -14,12 +14,22 @@
 # Monitoring Memory and Disk Metrics for Amazon EC2 Linux Instances
 # See: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mon-scripts.html
 
-- name: Install script dependencies for EL.
+- name: Install script dependencies for EL (any).
   yum:
     name: "{{ package_dependencies }}"
     state: present
   when:
     - ansible_distribution == 'CentOS' or ansible_distribution == 'RedHat'
+
+- name: Install script dependencies for EL 7.
+  yum:
+    name:
+      - perl-Sys-Syslog
+      - perl-LWP-Protocol-https
+    state: present
+  when:
+    - ansible_distribution == 'CentOS' or ansible_distribution == 'RedHat'
+    - ansible_distribution_major_version == '7'
 
 # Monitoring Memory and Disk Metrics for Amazon EC2 Linux Instances
 # See: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mon-scripts.html

@@ -31,8 +31,13 @@ dependencies:
       perl_cpanm_modules:
         - Switch
         - DateTime
-        - Sys::Syslog
-        - Net::SSLeay
-        - IO::Socket::SSL
-        - LWP::Protocol::https
         - Digest::SHA
+
+  - role: blackstar257.perl
+    vars:
+      perl_cpanm_modules:
+        - Sys::Syslog
+        - LWP::Protocol::https
+    when:
+      - ansible_distribution == 'CentOS' or ansible_distribution == 'RedHat'
+      - ansible_distribution_major_version == '8'
