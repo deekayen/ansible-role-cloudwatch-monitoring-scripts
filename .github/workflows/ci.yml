@@ -34,7 +34,7 @@ jobs:
           python-version: '3.x'
 
       - name: Install test dependencies.
-        run: pip install --upgrade --upgrade-strategy eager -r requirements.txt
+        run: pip3 install --upgrade --upgrade-strategy eager -r requirements.txt
 
       - name: Install test dependencies.
         run: ansible-galaxy install blackstar257.perl
