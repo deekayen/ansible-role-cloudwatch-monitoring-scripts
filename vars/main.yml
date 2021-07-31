@@ -2,10 +2,5 @@
 
 package_dependencies:
   - crontabs
-  - perl-Switch
-  - perl-DateTime
-  - perl-Sys-Syslog
-  - perl-LWP-Protocol-https
-  - perl-Digest-SHA
   - zip
   - unzip
