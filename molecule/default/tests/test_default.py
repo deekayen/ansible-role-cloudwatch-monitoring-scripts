@@ -14,8 +14,6 @@ def test_dependencies_installed(host):
 def test_monitor_file(host):
     assert host.file("/opt/aws-scripts-mon").is_directory
 
-    path = "/opt/aws-scripts-mon/mon-put-instance-data.pl"
-    file = host.file(path)
-    assert file.exists
+    file = host.file("/opt/aws-scripts-mon/mon-put-instance-data.pl")
     assert file.is_file
     assert file.size > 0
